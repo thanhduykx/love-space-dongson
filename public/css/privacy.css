@@ -1,0 +1,43 @@
+/* Terms and privacy page: the shared header, silk background and footer come from archive.css. */
+.back-home { background: transparent; color: var(--gilt); border-color: #c99a3b; }
+.back-home:hover { background: #ffffff1a; border-color: var(--gilt); }
+
+/* The text sits on a cream "scroll" with a double gilt frame and a drum medallion in the corner. */
+.scroll { max-width: 820px; margin: 28px auto 0; padding: 36px 40px 32px; border: 1px solid #c99a3b; outline: 1px solid #e6cf95; outline-offset: -8px; border-radius: 16px;
+  position: relative; overflow: hidden; background: #fffaf0; box-shadow: 0 10px 30px #5f3a0a14; }
+/* Half a turning drum face in the top-right corner, behind the heading. */
+.scroll-drum { top: -150px; right: -150px; width: 380px; transform: none; }
+.scroll-above, .scroll section, .scroll-back { position: relative; z-index: 1; }
+.scroll-heading h1, .scroll-eyebrow { text-shadow: 0 0 10px #fffaf0, 0 0 18px #fffaf0; }
+.scroll-heading { padding-bottom: 18px; margin-bottom: 8px; border-bottom: 1px solid #e6cf95; }
+.scroll-eyebrow { font: 700 1.5rem/1.2 "Dancing Script", cursive; color: var(--seal); }
+.scroll h1 { margin-top: 4px; }
+.scroll-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.scroll-nav a { padding: 8px 14px; border: 1px solid #d9bd7c; border-radius: 99px; background: #fff6e0; color: var(--lacquer); font-size: 1rem; font-weight: 650; }
+.scroll-nav a:hover { background: #fbe9bf; }
+
+.scroll section { padding-top: 22px; scroll-margin-top: 16px; }
+.scroll h2 { display: flex; align-items: center; gap: 10px; font-size: 1.5rem; color: var(--lacquer); }
+/* A small gilt lotus-diamond before each section title. */
+.scroll h2::before { content: ""; width: 14px; height: 14px; flex: none; transform: rotate(45deg); border: 2px solid #c99a3b; background: #f6dc8f; }
+.scroll h3 { margin-top: 18px; font-size: 1.1875rem; color: var(--ink); }
+.scroll p, .scroll li { color: var(--muted); }
+.scroll p { margin-top: 8px; }
+.scroll ul, .scroll ol { margin: 10px 0 0; padding-left: 1.4em; display: grid; gap: 6px; }
+.scroll li::marker { color: #b0862f; font-weight: 750; }
+.scroll a:not(.button) { color: var(--lacquer); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Numbered terms as gilt roundels, easier to follow than a plain list. */
+.scroll .terms { list-style: none; padding-left: 0; counter-reset: term; gap: 10px; }
+.scroll .terms li { position: relative; padding: 10px 14px 10px 54px; border: 1px solid #ecdcb4; border-radius: 12px; background: #fffdf7; counter-increment: term; }
+.scroll .terms li::before { content: counter(term); position: absolute; left: 12px; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%;
+  background: linear-gradient(135deg, #f6dc8f, #c99a3b); color: var(--lacquer); font-weight: 800; box-shadow: inset 0 0 0 2px #fff4d6; }
+
+.scroll-back { margin-top: 28px; }
+
+@media (max-width: 760px) {
+  .scroll { margin-top: 16px; padding: 22px 18px; outline-offset: -6px; }
+  .scroll-drum { top: -110px; right: -120px; width: 260px; }
+  .back-home { min-height: 44px; padding-inline: 12px; }
+  .scroll-back .button { width: 100%; }
+}

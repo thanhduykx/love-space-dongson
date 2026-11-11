@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7f5">
+  <title>Love Space · Kho Media Gia Đình</title>
+  <link rel="preload" href="/fonts/dancing-script-700-vietnamese.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23225848'/%3E%3Cpath d='M5 15l4-4 3 3 3-5 4 6v3H5z' fill='%23d7f4e5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/css/archive.css">
+  <script src="/js/media-types.js" defer></script>
+  <script src="/js/transfer-pool.js" defer></script>
+  <script src="/js/archive.js" defer></script>
+</head>
+<body>
+  <svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="8.5" cy="9" r="1.5"/><path d="m3 17 5-4 4 3 4-6 5 6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4z"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4m-5 5 5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v12m-5-5 5 5 5-5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="5.5"/><path d="m15 15 4 4"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M8 4v4m8-4v4M4 11h16m-10 4h4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m6 12 4 4 8-8"/></symbol>
+    <symbol id="i-select" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6m4-6v6M6 7l1 12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-12M9 7V4h6v3"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
+    <symbol id="i-drum" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22.5" fill="#8d6b34" stroke="#4f3a1a" stroke-width="1.5"/><circle cx="24" cy="24" r="19" fill="none" stroke="#e2c27a" stroke-width="1.2"/><circle cx="24" cy="24" r="15.5" fill="none" stroke="#e2c27a" stroke-width="1" stroke-dasharray="1.2 2"/><circle cx="24" cy="24" r="12" fill="none" stroke="#e2c27a" stroke-width="1"/><polygon points="24.00 15.00 24.71 20.88 27.90 15.89 26.00 21.50 31.04 18.39 26.88 22.61 32.77 22.00 27.20 24.00 32.77 26.00 26.88 25.39 31.04 29.61 26.00 26.50 27.90 32.11 24.71 27.12 24.00 33.00 23.29 27.12 20.10 32.11 22.00 26.50 16.96 29.61 21.12 25.39 15.23 26.00 20.80 24.00 15.23 22.00 21.12 22.61 16.96 18.39 22.00 21.50 20.10 15.89 23.29 20.88" fill="#f0d68f" stroke="none"/><circle cx="24" cy="24" r="2.6" fill="#8d6b34" stroke="#f0d68f" stroke-width="1"/><circle cx="24" cy="5" r="1.4" fill="#5f8f7c" stroke="none"/><circle cx="41" cy="30" r="1.2" fill="#5f8f7c" stroke="none"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+  </svg>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/" aria-label="Love Space, kho media gia đình, trang chủ">
+        <span class="family-seal" aria-hidden="true">❤</span>
+        <span class="family-name">Love Space</span>
+      </a>
+      <div class="topbar-tools">
+        <div class="clock" id="clock" role="group" aria-label="Giờ hiện tại">
+          <time class="clock-time" id="clock-time">--:--</time>
+          <span class="clock-date" id="clock-date"></span>
+        </div>
+        <button type="button" class="button secondary text-size" id="text-size" aria-pressed="false" aria-label="Chữ to hơn">A+</button>
+      </div>
+    </div>
+  </header>
+
+  <span class="visit-badge" id="visit-count" title="Tổng lượt mở kho ảnh từ khi bật bộ đếm" hidden>
+    <strong id="visit-total"></strong>
+    <span>lượt truy cập</span>
+  </span>
+
+  <main class="layout">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-drum" id="hero-drum" aria-hidden="true"><svg class="drum-fallback"><use href="#i-drum"/></svg></div>
+      <div class="hero-text">
+        <h1 id="page-title">Kho ảnh gia đình</h1>
+        <p>Chọn ảnh hoặc video bên dưới để xem.</p>
+      </div>
+      <button type="button" class="button primary hero-action" id="open-upload"><svg><use href="#i-upload"/></svg> Tải ảnh và video lên</button>
+    </section>
+
+    <section aria-labelledby="library-title" class="library">
+      <div class="library-heading">
+        <div><h2 id="library-title">Ảnh và video</h2><p id="result-count" class="sr-only" aria-live="polite">Đang tải ảnh và video…</p></div>
+        <div class="heading-actions">
+          <button type="button" class="button secondary danger-outline" id="delete-mode" aria-pressed="false"><svg><use href="#i-trash"/></svg><span>Xóa</span></button>
+          <button type="button" class="button secondary" id="selection-toggle" aria-pressed="false"><svg><use href="#i-select"/></svg><span>Tải về / Đổi ngày</span></button>
+        </div>
+      </div>
+      <div class="filters">
+        <label class="search"><svg><use href="#i-search"/></svg><input id="search" type="search" placeholder="Tìm ảnh hoặc video" aria-label="Tìm ảnh hoặc video"></label>
+        <details class="filter-options">
+          <summary><span>Bộ lọc</span><span id="filter-indicator" class="filter-indicator" hidden>Đang dùng</span></summary>
+          <div class="filter-fields">
+            <label class="field">Xem ngày nào<input id="filter-day" type="date"></label>
+            <label class="field">Thứ tự<select id="sort"><option value="newest">Mới nhất trước</option><option value="oldest">Cũ nhất trước</option></select></label>
+          </div>
+        </details>
+        <button type="button" class="button text-button" id="clear-filters" hidden>Xóa tìm kiếm và bộ lọc</button>
+      </div>
+      <div class="selection-bar" id="selection-bar" hidden>
+        <div><strong id="selected-count" aria-live="polite">Chưa chọn mục nào</strong><button type="button" class="button text-button" id="select-visible">Chọn tất cả đang hiện</button><button type="button" class="button text-button" id="clear-selection">Bỏ chọn</button></div>
+        <div><button type="button" class="button text-button danger-text" id="delete-selected"><svg><use href="#i-trash"/></svg> <span>Xóa</span></button><button type="button" class="button secondary" id="change-selected-date"><svg><use href="#i-calendar"/></svg> Đổi ngày</button><button type="button" class="button primary" id="download-selected"><svg><use href="#i-download"/></svg> Tải từng tệp</button></div>
+      </div>
+      <div id="gallery" class="gallery"><div class="loading-state"><svg class="drum-spinner" aria-hidden="true"><use href="#i-drum"/></svg><span>Đang mở kho ảnh…</span></div><div class="skeleton-grid" aria-hidden="true"><span class="skeleton-card"><span class="skeleton-thumb"></span><span class="skeleton-line"></span></span><span class="skeleton-card"><span class="skeleton-thumb"></span><span class="skeleton-line"></span></span><span class="skeleton-card"><span class="skeleton-thumb"></span><span class="skeleton-line"></span></span><span class="skeleton-card"><span class="skeleton-thumb"></span><span class="skeleton-line"></span></span><span class="skeleton-card"><span class="skeleton-thumb"></span><span class="skeleton-line"></span></span><span class="skeleton-card"><span class="skeleton-thumb"></span><span class="skeleton-line"></span></span></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-notice"><span>Không gian lưu trữ kỷ niệm gia đình</span><a href="/privacy.html#dieu-khoan">Điều khoản</a><a href="/privacy.html#quyen-rieng-tu">Quyền riêng tư</a></p>
+      <p class="footer-author">Powered by <strong>Love Space</strong> · Three.js Đông Sơn Drum Experience</p>
+    </div>
+  </footer>
+
+  <dialog id="upload-dialog" aria-labelledby="upload-title">
+    <form id="upload-form">
+      <div class="dialog-heading"><div><h2 id="upload-title">Tải ảnh và video lên</h2><p>Chọn ngày, rồi chọn ảnh. Ảnh sẽ được gửi ngay.</p></div><button type="button" class="icon-button" id="upload-close" aria-label="Đóng"><svg aria-hidden="true"><use href="#i-close"/></svg></button></div>
+      <fieldset class="day-picker" data-day-input="upload-day">
+        <legend>Lưu vào ngày</legend>
+        <div class="day-options">
+          <button type="button" class="button secondary" data-day-offset="0">Hôm nay</button>
+          <button type="button" class="button secondary" data-day-offset="1">Hôm qua</button>
+          <button type="button" class="button secondary" data-day-other><svg><use href="#i-calendar"/></svg> Ngày khác</button>
+        </div>
+        <input type="date" id="upload-day" required aria-label="Chọn ngày khác" hidden>
+        <p class="day-words" aria-live="polite"></p>
+      </fieldset>
+      <label class="drop-zone" id="drop-zone"><svg><use href="#i-upload"/></svg><strong>Chọn ảnh và video</strong><small>Có thể chọn nhiều mục cùng lúc.</small><input id="file-input" type="file" multiple></label>
+      <div id="queued-files" class="queued-files"></div>
+      <div id="upload-progress" class="upload-progress" hidden><div class="meter" id="upload-meter" role="progressbar" aria-label="Tiến độ gửi" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div><span id="upload-progress-text"></span></div>
+      <p class="error" id="upload-error" role="alert" hidden></p>
+      <div class="dialog-actions"><button type="button" class="button secondary" id="upload-minimize">Đóng</button><button type="submit" class="button primary" id="upload-submit" hidden><svg><use href="#i-upload"/></svg><span>Gửi lại</span></button></div>
+    </form>
+  </dialog>
+
+  <dialog id="preview-dialog" class="preview-dialog" aria-labelledby="preview-title">
+    <div class="dialog-heading"><h2 id="preview-title"></h2><button type="button" class="button secondary" data-close>Đóng</button></div>
+    <div class="preview-stage">
+      <div class="preview-media" id="preview-media"></div>
+    </div>
+    <div class="preview-nav" id="preview-nav">
+      <button type="button" class="button secondary" id="preview-prev"><svg><use href="#i-left"/></svg> Trước</button>
+      <p id="preview-position" aria-live="polite"></p>
+      <button type="button" class="button secondary" id="preview-next">Tiếp <svg><use href="#i-right"/></svg></button>
+    </div>
+    <div class="preview-details"><p id="preview-info"></p><p id="preview-story" hidden></p></div>
+    <div class="dialog-actions"><button type="button" class="button text-button danger-text" id="delete-preview">Xóa</button><button type="button" class="button text-button" id="rename-preview">Đổi tên</button><button type="button" class="button text-button" id="change-preview-date">Đổi ngày</button><a class="button secondary" id="download-original"><svg><use href="#i-download"/></svg> Tải về máy</a><button type="button" class="button primary" id="save-to-photos" hidden>Lưu vào Ảnh</button></div>
+    <p class="share-status" id="preview-share-status" role="status" hidden></p>
+  </dialog>
+
+  <dialog id="rename-dialog" aria-labelledby="rename-title">
+    <form id="rename-form">
+      <div class="dialog-heading"><h2 id="rename-title">Đổi tên tệp</h2></div>
+      <label class="field">Tên mới<input type="text" id="rename-name" maxlength="255" required autofocus aria-describedby="rename-extension"></label>
+      <p class="share-status" id="rename-extension"></p>
+      <p class="error" id="rename-error" role="alert" hidden></p>
+      <div class="dialog-actions"><button type="button" class="button secondary" id="rename-cancel" data-close>Hủy</button><button type="submit" class="button primary" id="rename-submit">Lưu tên</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="date-dialog" aria-labelledby="date-title">
+    <form id="date-form">
+      <div class="dialog-heading"><div><h2 id="date-title">Đổi ngày lưu ảnh</h2><p id="date-description"></p></div><button type="button" class="icon-button" data-close aria-label="Đóng"><svg><use href="#i-close"/></svg></button></div>
+      <fieldset class="day-picker" data-day-input="move-day">
+        <legend>Chuyển sang ngày</legend>
+        <div class="day-options">
+          <button type="button" class="button secondary" data-day-offset="0">Hôm nay</button>
+          <button type="button" class="button secondary" data-day-offset="1">Hôm qua</button>
+          <button type="button" class="button secondary" data-day-other><svg><use href="#i-calendar"/></svg> Ngày khác</button>
+        </div>
+        <input type="date" id="move-day" required aria-label="Chọn ngày khác" hidden>
+        <p class="day-words" aria-live="polite"></p>
+      </fieldset>
+      <p class="error" id="date-error" role="alert" hidden></p>
+      <div class="dialog-actions"><button type="button" class="button secondary" data-close>Đóng</button><button type="submit" class="button primary" id="date-submit">Lưu ngày</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="delete-dialog" aria-labelledby="delete-title">
+    <form id="delete-form">
+      <div class="dialog-heading"><div><h2 id="delete-title">Xóa ảnh và video</h2><p id="delete-description"></p></div><button type="button" class="icon-button" data-close aria-label="Đóng"><svg><use href="#i-close"/></svg></button></div>
+      <p>Tệp sẽ biến mất khỏi kho ảnh của cả nhà.</p>
+      <p class="error" id="delete-error" role="alert" hidden></p>
+      <div class="dialog-actions"><button type="button" class="button secondary" data-close>Giữ lại</button><button type="submit" class="button danger" id="delete-submit"><svg><use href="#i-trash"/></svg> Xóa vĩnh viễn</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="download-dialog" aria-labelledby="download-title">
+    <div class="dialog-heading"><div><h2 id="download-title">Tải tệp gốc</h2><p>Dùng Lưu vào Ảnh nếu thiết bị hỗ trợ.</p></div><button type="button" class="icon-button" data-close aria-label="Đóng"><svg><use href="#i-close"/></svg></button></div>
+    <div class="dialog-actions" id="download-batch-actions" hidden>
+      <button type="button" class="button primary" id="download-batch">Tải tất cả vào thư mục</button>
+    </div>
+    <p id="download-status" role="status"></p>
+    <div id="download-files" class="queued-files download-files"></div>
+    <p class="share-status" id="download-share-status" role="status" hidden></p>
+  </dialog>
+  <button type="button" class="button primary upload-bubble" id="upload-bubble" aria-haspopup="dialog" aria-controls="upload-dialog" hidden>
+    <svg aria-hidden="true"><use href="#i-upload"/></svg><span id="upload-bubble-label"></span>
+  </button>
+  <div id="notification" class="notification" role="status" hidden><span id="notification-text"></span><button type="button" class="notification-action" id="notification-action" hidden></button></div>
+</body>
+</html>

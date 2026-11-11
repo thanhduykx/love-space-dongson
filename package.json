@@ -1,0 +1,30 @@
+{
+  "name": "love-space",
+  "version": "1.0.0",
+  "description": "Nền tảng lưu trữ media gia đình độc đáo với mô hình 3D Mặt trống đồng Đông Sơn dựng bằng Three.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "drive:auth": "node scripts/drive-oauth.js",
+    "drive:check": "node scripts/drive-check.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "photo-archive",
+    "photo-upload",
+    "render"
+  ],
+  "author": "Love Space Community",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "compression": "^1.8.2",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "mime-types": "^3.0.2",
+    "multer": "^2.5.0"
+  }
+}

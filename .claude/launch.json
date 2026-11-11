@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "start",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "start"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "ui-local",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "-e",
+        "for (const k of ['SUPABASE_URL','SUPABASE_SECRET_KEY','GOOGLE_DRIVE_FOLDER_ID','GOOGLE_DRIVE_SERVICE_ACCOUNT_JSON','GOOGLE_DRIVE_OAUTH_CLIENT_ID','GOOGLE_DRIVE_OAUTH_CLIENT_SECRET','GOOGLE_DRIVE_OAUTH_REFRESH_TOKEN']) process.env[k]=''; process.env.DATA_DIR=require('path').join(require('os').tmpdir(),'giadinh-ui'); require('./server').app.listen(3100)"
+      ],
+      "port": 3100
+    }
+  ]
+}
